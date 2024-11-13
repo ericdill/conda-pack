@@ -4,7 +4,7 @@ import conda_pack
 
 # Project settings
 project = 'conda-pack'
-copyright = '2017, Jim Crist'
+copyright = '2017-2024, Anaconda'
 author = 'Jim Crist'
 release = version = conda_pack.__version__
 
