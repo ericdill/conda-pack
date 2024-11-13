@@ -127,7 +127,7 @@ jobs:
   #     with:
   #       token: ${{ secrets.CODECOV_TOKEN }}
   upload:
-    # needs: tests
+    needs: package
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
