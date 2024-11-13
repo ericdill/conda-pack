@@ -154,14 +154,14 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./docs/build/html
-    - name: Upload to anaconda.org
-      env:
-        ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
-        GITHUB_REF: ${{ github.ref }}
-      run: |
-        source $CONDA/bin/activate
-        [[ "$GITHUB_REF" =~ ^refs/tags/ ]] || export LABEL="--label dev"
-        anaconda --verbose --token $ANACONDA_TOKEN upload --user ctools $LABEL conda-bld/*/*.tar.bz2 --force
+    # - name: Upload to anaconda.org
+    #   env:
+    #     ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
+    #     GITHUB_REF: ${{ github.ref }}
+    #   run: |
+    #     source $CONDA/bin/activate
+    #     [[ "$GITHUB_REF" =~ ^refs/tags/ ]] || export LABEL="--label dev"
+    #     anaconda --verbose --token $ANACONDA_TOKEN upload --user ctools $LABEL conda-bld/*/*.tar.bz2 --force
 
   deploy:
     needs: upload
